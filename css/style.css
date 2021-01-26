@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  background: url(../images/bg-top.svg), url(../images/bg-bottom.svg);
+  background-position: 70vw 0vh, 0vw 70vh;
+  background-repeat: no-repeat;
+  background-color: #F7F7FF;
+}
+
+.container {
+  max-width: 1290px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 15px;
+}
+
+header {
+  margin: 50px 0 30px 0;
+  color: hsl(232, 13%, 33%);
+}
+
+.toogle-price {
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.toogle-price span {
+  margin: 0 20px;
+  color: hsl(234, 14%, 74%);
+}
+
+.switchButton {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 2rem;
+}
+
+.switchButton input {
+  display: none;
+}
+
+.switchButton .slideBtn {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsl(228, 45%, 44%);
+  transition: .4s;
+  padding: 5px;
+  color: #FFF;
+  border-radius: 34px;
+}
+
+.switchButton .slideBtn:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.switchButton input:checked .slideBtn {
+  padding-left: 40px;
+}
+.switchButton input:focus + .slideBtn {
+  background-color: rgba(62, 82, 163, .3);
+}
+.switchButton input:checked + .slideBtn:before {
+  -webkit-transform: translateX(60px);
+  -ms-transform: translateX(60px);
+  transform: translateX(60px);
+  left: -20px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+.card {
+  background-color: #FFF;
+  margin: 0 1px;
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  transition: .3s;
+}
+
+.card__header h2 {
+  color: hsl(232, 13%, 33%);
+}
+
+.card__header--price {
+  font-size: 3.5rem;
+  margin: 20px 0;
+  color: hsl(232, 13%, 33%);
+}
+
+.card__body ul {
+  list-style: none;
+}
+
+.card__body--list {
+  display: block;
+  color:hsl(233, 13%, 49%);
+  padding: 20px 0;
+  border-bottom: 1px solid gray;
+}
+
+.card__body--list:first-child {
+  border-top: 1px solid gray
+}
+
+.card__body__submit {
+  margin-top: 25px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  text-transform: uppercase;
+  color: #FFF;
+  background: rgb(163,168,240);
+  background: linear-gradient(90deg, rgba(163,168,240,1) 0%, rgba(105,111,221,1) 70%);
+}
+
+.card__body__submit:hover {
+  cursor: pointer;
+}
+
+.card:hover {
+  background-color:  hsl(228, 45%, 44%);
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+
+.card:hover .card__header h2,
+.card:hover .card__header--price,
+.card:hover .card__body--list  {
+  color: hsl(240, 78%, 98%);
+}
+
+.card:hover .card__body__submit {
+  color: hsl(228, 45%, 44%);
+  background: hsl(240, 78%, 98%);
+}
+
+.toogle-price .active {
+  color: hsl(232, 13%, 33%);
+}
+
+@media screen and (max-width: 540px){
+  .cards {
+    /* width: 90%; */
+    padding: 0 10px;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    margin-bottom: 30px;
+  }
+
+  .attribution{
+    text-align: center;
+  }
+}
